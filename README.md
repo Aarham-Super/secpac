@@ -1,5 +1,8 @@
 # 🔐 SECPAC
 
+[![npm version](https://img.shields.io/npm/v/secpac.svg)](https://www.npmjs.com/package/secpac)
+[![npm downloads](https://img.shields.io/npm/dm/secpac.svg)](https://www.npmjs.com/package/secpac)
+
 Secure Environment Config & Protected Access Controller
 
 SECPAC is a modern Node.js CLI tool for managing environment variables in a simple, structured, and optionally secure way.
@@ -121,7 +124,8 @@ Simple configuration, powerful when needed.
 # 👨‍💻 AUTHOR
 
 Aarham  
-https://github.com/Aarham-Super/secpac
+GitHub: [https://github.com/Aarham-Super/secpac](https://github.com/Aarham-Super/secpac)  
+NPM: [https://www.npmjs.com/package/secpac](https://www.npmjs.com/package/secpac)
 
 ---
 
