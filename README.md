@@ -32,7 +32,7 @@ secpac init
 
 NPM link = (https://www.npmjs.com/package/secpac)
 
-Github Repo Link = (github.com/Aarham-Super/secpac)
+Github Repo Link = (https://github.com/Aarham-Super/secpac)
 
 
 
