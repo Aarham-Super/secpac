@@ -28,6 +28,16 @@ npm install -g secpac
 secpac init
 
 ---
+# 🌐 Website
+
+NPM link = npmjs.com/package/secpac
+
+Github Repo Link = github.com/Aarham-Super/secpac
+
+
+
+
+
 
 # 🔐 SET PASSWORD (OPTIONAL)
 
