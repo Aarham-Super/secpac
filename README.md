@@ -30,7 +30,7 @@ secpac init
 ---
 # 🌐 Website
 
-NPM link = (npmjs.com/package/secpac)
+NPM link = (https://www.npmjs.com/package/secpac)
 
 Github Repo Link = (github.com/Aarham-Super/secpac)
 
