@@ -2,38 +2,34 @@
 
 ## Secure Environment Config & Protected Access Controller
 
-SECPAC is a modern, lightweight configuration management system for Node.js applications.
+SECPAC is a modern Node.js CLI tool designed to manage environment variables in a structured, secure, and developer-friendly way.
 
-It is designed as a flexible alternative to `.env`, extending it with optional security, structured CLI tools, and controlled access features — without adding unnecessary complexity.
-
----
-
-# 📌 Overview
-
-SECPAC provides a standardized way to manage environment variables and secrets in Node.js projects using a simple `KEY=value` format.
-
-It maintains full compatibility with traditional `.env` workflows while introducing optional enhancements for access control and developer tooling.
+It acts as a powerful alternative to `.env`, adding optional security layers, CLI-based access, and advanced configuration control — while keeping simplicity at its core.
 
 ---
 
-# ⚙️ Core Principles
+# 🚀 Why SECPAC?
 
-SECPAC is built on the following principles:
+Modern applications rely heavily on environment variables such as:
 
-- Simplicity first — minimal learning curve
-- Optional security — not enforced by default
-- Developer-centric design — CLI-first workflow
-- Lightweight architecture — no unnecessary dependencies
-- Predictable behavior — consistent across environments
+- API keys
+- Database URLs
+- Authentication tokens
+- Server configuration
+
+SECPAC improves this workflow by introducing:
+
+- CLI-based access to secrets
+- Optional password protection
+- Structured key management
+- Ignore system for sensitive values
+- Lightweight `.env` compatibility
 
 ---
 
-# ✨ Key Features
+# ⚙️ Installation
 
-## ⚡ Standard `.env` Compatibility
-SECPAC uses a familiar format:
+Install SECPAC globally using npm:
 
-```txt id="env_format"
-API_KEY=your_api_key
-DATABASE_URL=localhost
-PORT=3000
+```bash id="install"
+npm install -g secpac
