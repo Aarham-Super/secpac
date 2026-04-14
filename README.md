@@ -7,7 +7,7 @@ Secure Environment Config & Protected Access Controller
 
 SECPAC is a modern Node.js CLI tool for managing environment variables in a simple, structured, and optionally secure way.
 
-It works like `.env` but adds CLI control, password protection, ignore system support, and better developer workflow tools.
+It works like .env but adds CLI control, password protection, ignore system support, and better developer workflow tools.
 
 ---
 
@@ -62,24 +62,16 @@ secpac admin
 # 🚫 IGNORE SYSTEM
 
 Create a file named:
-
 .secpacignore
 
 Example:
-
-PASSWORD
-SECRET_KEY
-DEBUG
-TEMP
+PASSWORD SECRET_KEY DEBUG TEMP
 
 ---
 
 # 📄 EXAMPLE .SECPAC FILE
 
-API_KEY=123456
-DATABASE_URL=localhost
-PORT=3000
-DEBUG=true
+API_KEY=123456 DATABASE_URL=localhost PORT=3000 DEBUG=true
 
 ---
 
