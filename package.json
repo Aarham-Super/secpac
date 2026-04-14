@@ -1,0 +1,34 @@
+{
+  "name": "secpac",
+  "version": "1.0.0",
+  "description": "Secure Environment Config & Protected Access Controller - a modern CLI tool for managing environment variables with optional security and access control",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "secpac": "./bin/secpac.js"
+  },
+  "keywords": [
+    "env",
+    "dotenv",
+    "cli",
+    "config",
+    "security",
+    "secrets",
+    "environment",
+    "node",
+    "tool"
+  ],
+  "author": "Aarham",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aarham-Super/secpac"
+  },
+  "bugs": {
+    "url": "https://github.com/Aarham-Super/secpac/issues"
+  },
+  "homepage": "https://github.com/Aarham-Super/secpac#readme",
+  "engines": {
+    "node": ">=14"
+  }
+}
