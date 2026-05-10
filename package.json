@@ -1,7 +1,7 @@
 {
   "name": "secpac",
   "version": "1.0.0",
-  "description": "Secure Environment Config & Protected Access Controller - a modern CLI tool for managing environment variables with optional security and access control",
+  "description": "Secure Environment Config & Protected Access Controller (SECPAC) - A high-security, encrypted alternative to .env. Stop storing secrets in plain text and start using password-protected environment management.",
   "type": "module",
   "main": "index.js",
   "bin": {
