@@ -3,37 +3,47 @@ import path from "path";
 
 let cache = {};
 let locked = false;
-let config = null;
 let password = null;
 
 /**
- * Load .secpac file (dotenv style)
+ * Load .secpac file and inject into process.env
+ * @param {string} filePath - Path to the config file (default: .secpac)
  */
 export function load(filePath = ".secpac") {
   const fullPath = path.join(process.cwd(), filePath);
 
   if (!fs.existsSync(fullPath)) {
-    throw new Error("❌ .secpac file not found");
+    throw new Error("❌ .secpac file not found. Run 'secpac init' to create one.");
   }
 
   const data = fs.readFileSync(fullPath, "utf8");
 
+  // Reset cache for fresh load
   cache = {};
 
   data.split("\n").forEach((line) => {
-    if (!line.trim()) return;
+    // Ignore comments and empty lines
+    if (!line.trim() || line.trim().startsWith("#")) return;
 
     const [key, ...rest] = line.split("=");
     const value = rest.join("=").trim();
 
     if (key && value) {
-      cache[key.trim()] = value;
+      const trimmedKey = key.trim();
+      const trimmedValue = value.trim();
+
+      cache[trimmedKey] = trimmedValue;
+      
+      // CRITICAL: This makes the variables available in the app
+      process.env[trimmedKey] = trimmedValue;
     }
   });
+  
+  return cache;
 }
 
 /**
- * Set password protection (optional feature)
+ * Set password protection (Optional security layer)
  */
 export function setPassword(pass) {
   password = pass;
@@ -41,7 +51,7 @@ export function setPassword(pass) {
 }
 
 /**
- * Unlock system
+ * Unlock system for sensitive viewing
  */
 export function unlock(pass) {
   if (!password) return true;
@@ -55,28 +65,29 @@ export function unlock(pass) {
 }
 
 /**
- * Get single value
+ * Get a single value from the cache
  */
 export function get(key) {
-  return cache[key];
+  return cache[key] || process.env[key];
 }
 
 /**
- * Get all values (raw - admin use)
+ * Get all values (Raw object)
  */
 export function all() {
   return cache;
 }
 
 /**
- * List keys only (your UNIQUE feature)
+ * List keys only - SECPAC Unique Feature
+ * Useful for debugging without exposing secrets
  */
 export function keys() {
   return Object.keys(cache);
 }
 
 /**
- * Safe view (hides values if locked)
+ * Safe view - Masks values if the system is locked
  */
 export function safe() {
   if (!locked) return cache;
@@ -89,11 +100,10 @@ export function safe() {
 }
 
 /**
- * Admin-only full dump (bypasses lock if unlocked)
+ * Admin-only full dump (Bypasses lock if password matches)
  */
 export function adminDump(pass) {
   if (!password) return cache;
-
   if (pass === password) return cache;
 
   throw new Error("❌ Admin access denied");
